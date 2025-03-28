@@ -1,18 +1,33 @@
 import React from 'react';
 import Home from './pages/Home';
+import BookStore from './pages/BookStore';
+import BookDetailsPage from './pages/BookDetailsPage';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    children: [
+      {
+        path: "/BookStore", element: <BookStore />,
+        children:[
+          {path: "/BookStore/:id", element: <BookDetailsPage />}
+        ]
+        },
+    ]
+  },
+
+]);
 
 function App() {
   return (
-      <BrowserRouter>
         <div className="min-h-screen bg-kunbook-background">
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
+        <RouterProvider router={router} />
         </div>
-      </BrowserRouter>
   );
 }
 

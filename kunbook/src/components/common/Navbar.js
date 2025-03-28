@@ -21,13 +21,13 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6">
-          <Link to="/books" className="text-gray-700 hover:text-blue-600">
+          <Link to="/BookStore" className="text-gray-700 hover:text-blue-600">
             Book Store
           </Link>
           <Link to="/categories" className="text-gray-700 hover:text-blue-600">
             Categories
           </Link>
-          <Link to="/about" className="text-gray-700 hover:text-blue-600">
+          <Link to="/Dashboard" className="text-gray-700 hover:text-blue-600">
             About
           </Link>
         </div>
