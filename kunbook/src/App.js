@@ -1,15 +1,18 @@
 import React from 'react';
-import './App.css';
+import Home from './pages/Home';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-xl shadow-md">
-        <h1 className="text-2xl font-bold text-blue-600">
-          Hello World!
-        </h1>
-      </div>
-    </div>
+      <BrowserRouter>
+        <div className="min-h-screen bg-kunbook-background">
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
   );
 }
 
